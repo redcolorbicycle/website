@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!--character encoding-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--fits all devices naturally + no zooming by default-->
+    <title>Hello from Zhengyang!</title> <!--browser tab name-->
+    <link rel="stylesheet" href = "style.css"> <!--links to style.css, and style.css is a stylesheet-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!--intro-->
+    <div id = "header">
+        <div class = "container">
+            <nav>
+                <img src = "images/logo.png" class = "logo">
+                <ul>
+                    <li><a href="#contact">Contact Me</a></li> <!--a href hyperlinks this list item-->
+                    <li><a href="https://github.com/redcolorbicycle">Github</a></li>
+                    <li><a href="https://www.linkedin.com/in/liu-zhengyang/">LinkedIn</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <div class = "header-text">
+                <p> Computer Science Student at NUS</p>
+                <h1> Hi, I'm <span>Zhengyang</span>.</h1>
+            </div>
+        </div>
+    </div>
+    <!--About Me-->
+    <div id = "about">
+        <div class = "container">
+            <div class = "row">
+                <div class = "about-col-1">
+                    <img src = "images/zhengyang.jpg">
+                </div>
+                <div class = "about-col-2">
+                    <h1 class = "sub-title">About Me</h1>
+                    <ul>
+                        <li>Recently transferred Computer Science student. Avid fan of MLB and F1. </li>
+                        <li>Currently exploring Machine Learning with NUS Fintech.</li>
+                        <li>Will be delving into App Development with Singapore Airlines from January - June 2025!</li>
+                        <li>Looking for opportunities to learn more about anything, especially Software Engineering and Full Stack Development.</li>
+                        <li>Learning softball on the extracurricular side. Love watching baseball and playing frisbee in my spare time!</li>
+                    </ul>
+                    <div class = "tab-titles">
+                        <p class = "tab-links active-link" onclick = "opentab('languages')">Languages</p>
+                        <p class = "tab-links" onclick = "opentab('education')">Education</p>
+                    </div>
+                    <div class = "tab-contents active-tab" id = "languages">
+                        <ul>
+                            <li><span>Python</span><br>Used in NUS modules, learning to use in Fintech projects</li>
+                            <li><span>Java</span><br>Used in NUS modules, will get more hands-on experience in SIA!</li>
+                            <li><span>SQL</span><br>Used in NUS modules, will get more hands-on experience in SIA!</li>
+                            <li><span>HTML/CSS</span><br>Self-learning in progress</li>
+                            <li><span>React/React Native</span><br>Explored in small projects</li>
+                        </ul>
+                    </div>
+                    <div class = "tab-contents" id = "education">
+                        <ul>
+                            <li><span>2024-present</span><br>NUS Computer Science</li>
+                            <li><span>2024-present</span><br>NUS Fintech Society</li>
+                            <li><span>2024-present</span><br>NUS StartIt</li>
+                            <li><span>2022-2023</span><br>NUS Business Analytics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--Interests! Portfolio in future-->
+
+    <div id = "interest">
+        <div class = "container"></div>
+            <h1 class = "sub-title"> My Interests </h1>
+            <div class= "interest-list">
+                <div class = "interests">
+                    <img src = "images/formula1.png">
+                    <div class = "overlay">
+                        <h3>Formula 1</h3>
+                        <p><a href="https://www.youtube.com/watch?v=vbsBeo71DT8" style="color: white; text-decoration: none;">Vettel and Ferrari was my favourite pairing.</a></p>
+                    </div>
+                </div>
+                <div class = "interests">
+                    <img src = "images/mlb.png">
+                    <div class = "overlay">
+                        <h3>MLB</h3>
+                        <p><a href="https://www.pinstripealley.com/" style="color: white; text-decoration: none;">New York Yankees</a> fan for life.</p>
+                    </div>
+                </div>
+                <div class = "interests">
+                    <img src = "images/bionicle.png">
+                    <div class = "overlay">
+                        <h3><a href=https://www.maskofdestiny.com/biomediaproject style="color: white; text-decoration: none;">Bionicle</a></h3>
+                        <p>I loved reading the lore and building the sets!</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <!--contact-->
+    <div id = "contact">
+        <div class = "container">
+            <div class = "row">
+                <div class = "contact-left">
+                    <h1 class = "sub-title">Contact Me></h1>
+                    <p><i class = "fas fa-paper-plane"></i> liuzhengyang10@gmail.com</p>
+                    <p><i class = "fas fa-phone-square-alt"></i> 90589086</p>
+                    <a href = "images/Zhengyang_Resume.pdf" download class = "btn btn2">My Resume</a>
+                </div>
+                <div class = "contact-right">
+                    <form name = "submit-to-google-sheet">
+                        <input type="text" name = "Name" placeholder = "Your Name" required>
+                        <input type="email" name = "Email" placeholder = "Your Email" required>
+                        <textarea name = "Message" rows = "6" placeholder = "Seeking opportunities to learn!"></textarea>
+                        <button type = "Submit" class = "btn btn2">Submit</button>
+                    </form>
+                    <span id = "msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname) {
+        for (tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>   
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxJvhnzzBHJygaXxMqaSgFSBhmDjI2d4UhdQ908NLGDQgaE0JOejpIAQTQgYlq0eTxg/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Thank you!"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            }, 5000)
+            form.reset()
+            
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
